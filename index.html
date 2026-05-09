@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Intake — Scribe v0.1.2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Language Intake</h1>
+      <p class="subtitle">Scribe Conformance v0.1.2</p>
+      <p class="keeper-line">No language may silently become authority.</p>
+    </header>
+
+    <!-- Step 1: Input -->
+    <section id="step-input" class="step active">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2>Paste or enter language</h2>
+      </div>
+      <textarea id="language-input" placeholder="Paste the language to inspect..." rows="5"></textarea>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="context-select">Context</label>
+          <select id="context-select">
+            <option value="inbound">Inbound message</option>
+            <option value="outbound">Outbound message</option>
+            <option value="ai_output">AI output</option>
+            <option value="human_input">Human input / command</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="inspect-btn" class="btn-primary" disabled>Run Inspection</button>
+    </section>
+
+    <!-- Step 2: Result -->
+    <section id="step-result" class="step hidden">
+      <div id="result-container"></div>
+
+      <!-- Reliance question (shown when Scribe Mark) -->
+      <div id="reliance-section" class="hidden">
+        <div class="step-header">
+          <span class="step-number">&#x25B8;</span>
+          <h2>Reliance Question</h2>
+        </div>
+        <p class="reliance-prompt" id="reliance-prompt-text"></p>
+        <div class="reliance-options" id="reliance-options"></div>
+      </div>
+
+      <!-- Recommended Route -->
+      <div id="route-section" class="hidden">
+        <div class="route-box" id="route-box"></div>
+      </div>
+
+      <div class="actions">
+        <button id="reset-btn" class="btn-secondary">Inspect another</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="keeper-lines">
+        <p>No language may silently become authority.</p>
+        <p>Scribe does not stop language from crossing. Scribe prevents language from crossing silently.</p>
+        <p>Evidence may inform. Permission authorizes.</p>
+        <p>Scribe does not decide this for you. The human remains the source.</p>
+        <p>Nothing expands silently.</p>
+      </div>
+      <p class="version">Language Intake MVP v0.1.2 — Local only — No external execution</p>
+    </footer>
+  </div>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
