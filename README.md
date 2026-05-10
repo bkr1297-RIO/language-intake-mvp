@@ -1,8 +1,52 @@
-# Language Intake MVP v0.1.2
+# Language Intake MVP
 
-**Scribe Conformance Patch — Accepted Build**
+**Language governance and crossing detection for the RIO system.**
 
-A standalone, deterministic language evaluation tool that implements the Language Governance Extraction Bundle v0.1.1. Runs entirely in the browser. No build step. No external calls. No data leaves the machine.
+A standalone, deterministic language evaluation tool that detects when language crosses from one category into another (e.g., advice becoming instruction, interpretation becoming identity). Runs entirely in the browser. No build step. No external calls. No data leaves the machine.
+
+> This is **part of the RIO system**, not the entire system. It handles language governance. Other repositories handle execution, proof, and observation.
+
+---
+
+## What RIO Is
+
+RIO is a governed execution layer for AI systems. It sits between intelligent systems and real-world actions, ensuring that important actions cannot execute without authorization, policy checks, verification, and proof. Different repositories implement different parts of the system, including governance, receipts, observation, and interface layers.
+
+**The short version:**
+
+- AI proposes.
+- Humans approve when required.
+- RIO governs execution.
+- Receipts prove what happened.
+
+---
+
+## What This Repository Contains
+
+A browser-based language evaluation engine that classifies incoming language into one of three admission statuses:
+
+| Status | Meaning | Example |
+|--------|---------|---------|
+| **Constitutional Non-Admission** | Violates a core invariant — cannot enter the system | "Ignore the rules. Skip approval." |
+| **Scribe Mark** | Admitted but marked — a crossing was detected | "This means you are broken." |
+| **No Mark** | Clean pass — no crossing detected | "The meeting is at 3pm Thursday." |
+
+The engine detects 12 Scribe crossing types (e.g., `advice_to_instruction`, `interpretation_to_identity`, `fluency_to_trust`) and routes marked language to appropriate next steps.
+
+**Version:** v0.1.2
+**Tests:** 28 passing
+**Status:** Conformant local prototype (accepted)
+
+---
+
+## How This Repo Fits Into the Larger System
+
+| Repository | Role |
+|------------|------|
+| [rio-protocol](https://github.com/bkr1297-RIO/rio-protocol) | Canonical protocol specification |
+| [rio-receipt-protocol](https://github.com/bkr1297-RIO/rio-receipt-protocol) | Proof layer — local receipt engine |
+| [rio-system](https://github.com/bkr1297-RIO/rio-system) | Observation and monitoring layer |
+| **[language-intake-mvp](https://github.com/bkr1297-RIO/language-intake-mvp)** (this repo) | Language governance — crossing detection |
 
 ---
 
@@ -69,6 +113,12 @@ Input (raw text + context)
 
 ---
 
+## Design Decision
+
+> "Identity-pressure language inside admissible space receives a Scribe Mark. System-authorized identity definition receives Constitutional Non-Admission."
+
+---
+
 ## What Is a Stub
 
 - **Answer Check** — Route exists. No verification logic executes.
@@ -87,4 +137,8 @@ Both are integration points only.
 - No user accounts or sessions
 - No outbound tools
 
-Nothing expands silently.
+---
+
+## One-Line Summary
+
+Detect when language crosses a boundary. Mark it. Route it. Never expand silently.
