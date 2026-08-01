@@ -1,0 +1,11 @@
+# TI-001 local candidate package
+# Generated after two byte-identical verifier runs on 2026-08-01.
+# This manifest does not include itself.
+b698c1ec3467c4586f022a57a5909f8a07f54fee81984891533bd96cdcdaea96  README.md
+50d538f72b85b30c41e92b3d12abbbde7cff54aceac79fa054446a9d7b880699  GITHUB-PLACEMENT.md
+234a6b20856bad82ba3e74e793f51fbc28f2f7fce07d6c876f840f51c8a2229e  SOURCE-BINDING.md
+f7a4fc0ba9c36f8df0c1166431223be407b8d1235d525f66cfd74a7ec8731580  typed-intake.js
+61436902b4894f5123b7ae919ad808ee05680c4f298611008b7be6390341f1b6  fixtures/TI-001.input.json
+9222816c143acc394f68cc1cd72034a2b6a1ae41275d4cf65db56d2fa235f36f  expected/TI-001.expected.json
+e80581e96eeee2859b346fe3f29b2cc050ab889da54dc4a8b950757c96ccd8d1  verify-ti001.mjs
+740a8013de79e6afd66dca7daa9aed37afd15848c902c262849804c5ca1225d5  reports/TI-001.report.json
