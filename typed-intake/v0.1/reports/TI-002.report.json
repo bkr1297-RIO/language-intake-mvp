@@ -1,0 +1,78 @@
+{
+  "report_type": "TYPED_INTAKE_LOCAL_FIXTURE_REPORT",
+  "fixture_id": "TI-002",
+  "profile_ref": "TYPED-INTAKE-PROFILE-001@0.1",
+  "run_mode": "OFFLINE_LOCAL_NO_EFFECT",
+  "result": "PASS",
+  "assertions": [
+    {
+      "id": "TI2-A01",
+      "statement": "Webpage/tool-output ingress standing is fixed as UNTRUSTED_DATA before content evaluation",
+      "status": "PASS"
+    },
+    {
+      "id": "TI2-A02",
+      "statement": "Webpage/tool output cannot promote DATA to INSTRUCTION",
+      "status": "PASS"
+    },
+    {
+      "id": "TI2-A03",
+      "statement": "Untrusted content cannot modify authenticated task, policy, or tool target",
+      "status": "PASS"
+    },
+    {
+      "id": "TI2-A04",
+      "statement": "Missing promotion artifact fails closed with a denial record",
+      "status": "PASS"
+    },
+    {
+      "id": "TI2-A05",
+      "statement": "Negative fixture attempts and executes zero tools",
+      "status": "PASS"
+    },
+    {
+      "id": "TI2-DET-01",
+      "statement": "Actual output exactly matches the sealed expected object",
+      "status": "PASS"
+    },
+    {
+      "id": "TI2-BIND-01",
+      "statement": "Content mutation without rebinding fails closed",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 0
+  },
+  "actual": {
+    "record_type": "TYPED_INTAKE_DENIAL_RECORD",
+    "fixture_id": "TI-002",
+    "profile_ref": "TYPED-INTAKE-PROFILE-001@0.1",
+    "policy_ref": "TYPED-INTAKE-TI002-LOCAL@0.1",
+    "ingress_ref": "ing_ti002_webpage",
+    "task_ref": "task_ti002_extract",
+    "ingress_standing": "UNTRUSTED_DATA",
+    "requested_standing": "INSTRUCTION",
+    "requested_use": "modify_task",
+    "decision": "BLOCK",
+    "reason_code": "STANDING_ESCALATION_DENIED",
+    "effect_state": "NONE",
+    "tool_calls_requested": 1,
+    "tool_calls_attempted": 0,
+    "tool_calls_executed": 0,
+    "promotion_artifact_present": false,
+    "content_authority_effect": "NONE",
+    "assertions_verified": [
+      "TI-A01",
+      "TI-A02",
+      "TI-A04",
+      "TI-A06"
+    ],
+    "deterministic_test_time": "2026-08-01T22:11:00.000Z",
+    "integrity": {
+      "algorithm": "SHA-256",
+      "decision_record_hash": "d02becdea9929fdf4e7b0910769d82a9bf06f2454e49c91d1da72c9b7305ec9d"
+    }
+  }
+}
