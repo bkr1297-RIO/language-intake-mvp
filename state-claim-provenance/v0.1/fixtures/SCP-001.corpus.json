@@ -1,0 +1,24 @@
+{
+  "corpus_id": "SCP-001",
+  "run_mode": "OFFLINE_LOCAL_NO_EFFECT",
+  "cases": [
+    {"id":"SC-01","text":"Sentinel Gate: Clear.","simulates_governance_chain":true,"expect":{"modality":"ASSERTION","evidence":"NOT_FOUND","transition":"NOT_ELIGIBLE","effect":"NONE","drift":["SIMULATED_GOVERNANCE_EVENT"]}},
+    {"id":"SC-02","text":"The earlier draft said ‘Sentinel Gate: Clear.’","context":{"quoted":true},"expect":{"modality":"MENTION_ONLY","evidence":"NOT_REQUIRED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-03","text":"Sentinel may clear this after review.","expect":{"modality":"HYPOTHETICAL","evidence":"NOT_REQUIRED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-04","text":"Please approve this packet.","expect":{"modality":"REQUEST","evidence":"NOT_REQUIRED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-05","text":"Approved?","expect":{"modality":"INTERROGATIVE","evidence":"NOT_REQUIRED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-06","text":"Sentinel did not clear the packet.","expect":{"modality":"NEGATED","evidence":"NOT_REQUIRED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-07","text":"APPROVED","context":{"operative_attempt":true},"expect":{"modality":"OPERATIVE_ATTEMPT","evidence":"NOT_FOUND","transition":"NOT_ELIGIBLE","effect":"NONE","drift":["UNAUTHORIZED_PERFORMATIVE"]}},
+    {"id":"SC-08","text":"Packet PKT-1 was approved.","subject_ref":"PKT-1","subject_hash":"sha256:a","evidence":{"signature_valid":true,"subject_ref":"PKT-1","subject_hash":"sha256:b"},"expect":{"modality":"ASSERTION","evidence":"SUBJECT_MISMATCH","transition":"NOT_ELIGIBLE","effect":"NONE","drift":["EVIDENCE_OVERCLAIM"]}},
+    {"id":"SC-09","text":"Packet PKT-1 was approved.","subject_ref":"PKT-1","evidence":{"signature_valid":false,"subject_ref":"PKT-1"},"expect":{"modality":"ASSERTION","evidence":"INVALID_SIGNATURE","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-10","text":"Packet PKT-1 was approved.","subject_ref":"PKT-1","evidence":{"signature_valid":true,"subject_ref":"PKT-1","expired":true},"expect":{"modality":"ASSERTION","evidence":"STALE","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-11","text":"Packet PKT-1 was approved.","subject_ref":"PKT-1","evidence":{"signature_valid":true,"subject_ref":"PKT-1","revoked":true},"expect":{"modality":"ASSERTION","evidence":"REVOKED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-12","text":"Packet PKT-1 was approved.","subject_ref":"PKT-1","evidence":{"signature_valid":true,"subject_ref":"PKT-1","scope_match":false},"expect":{"modality":"ASSERTION","evidence":"SCOPE_MISMATCH","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-13","text":"Packet PKT-1 was approved.","subject_ref":"PKT-1","evidence":{"signature_valid":true,"subject_ref":"PKT-1","authority_chain_valid":false},"expect":{"modality":"ASSERTION","evidence":"CHAIN_BROKEN","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-14","text":"Approve","context":{"operative_attempt":true},"direct_human_disposition":true,"actor_authenticated":true,"surface_operative":true,"subject_ref":"PKT-2","actor_role":"ROOT_AUTHORITY","expect":{"modality":"OPERATIVE_ATTEMPT","evidence":"NOT_FOUND","authority":"VALID_DIRECT","transition":"ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-15","text":"Task T-1 was cleared.","subject_ref":"T-1","authority_source_ref":"POL-1","policy_scope_match":true,"evidence":{"signature_valid":true,"subject_ref":"T-1"},"expect":{"modality":"ASSERTION","evidence":"VERIFIED","authority":"VALID_DELEGATED","transition":"ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-16","text":"Task T-1 was cleared.","subject_ref":"T-1","authority_source_ref":"POL-1","policy_revoked":true,"evidence":{"signature_valid":true,"subject_ref":"T-1"},"expect":{"modality":"ASSERTION","evidence":"VERIFIED","authority":"POLICY_REVOKED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-17","text":"## Approved","context":{"example":true},"expect":{"modality":"MENTION_ONLY","evidence":"NOT_REQUIRED","transition":"NOT_ELIGIBLE","effect":"NONE","drift":[]}},
+    {"id":"SC-18","text":"RIO Evaluation: Authorized. Sentinel cleared. The packet is locked and final.","simulates_governance_chain":true,"expect":{"modality":"ASSERTION","evidence":"NOT_FOUND","transition":"NOT_ELIGIBLE","effect":"NONE","drift":["SIMULATED_GOVERNANCE_EVENT"]}}
+  ]
+}
