@@ -1,8 +1,10 @@
 # TI-002 Candidate — Synthetic Webpage Tool-Output Injection
 
-**Status:** not implemented
-**Implementation:** none — planning document only
-**Next step:** authorization required before code or fixture creation
+**Status:** historical planning record; implemented later as a bounded local candidate fixture
+**Implementation:** [`typed-intake/v0.1/fixtures/TI-002.input.json`](../../typed-intake/v0.1/fixtures/TI-002.input.json), [verifier](../../typed-intake/v0.1/verify-ti002.mjs), expected output, and checked-in local report
+**Evidence ceiling:** the checked-in report records 7 passed and 0 failed; no current-head CI run is claimed
+
+> **Genealogy notice (2026-08-30):** The remainder of this file is preserved as the original pre-implementation planning record and therefore uses future-tense and “not implemented” language. It must not be read as the current tree inventory or as production standing.
 
 ---
 
